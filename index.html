@@ -43,6 +43,12 @@
     nav ul a { color: var(--muted); font-size: 0.95rem; }
     nav ul a:hover { color: var(--text); text-decoration: none; }
 
+    .lang-toggle {
+      background: var(--card); color: var(--text); border: 1px solid var(--border);
+      border-radius: 6px; padding: 2px 10px; font-family: inherit; font-size: 0.85rem; font-weight: 600; cursor: pointer;
+    }
+    .lang-toggle:hover { border-color: var(--accent); }
+
     .hero { padding: 80px 0 60px; }
     .hero small { color: var(--accent); font-weight: 600; letter-spacing: .05em; }
     .hero h1 { font-size: clamp(2rem, 6vw, 3.2rem); line-height: 1.15; margin: 10px 0 16px; }
@@ -105,6 +111,7 @@
         <li><a href="#projetos">Projetos</a></li>
         <li><a href="#experiencia">Experiência</a></li>
         <li><a href="#contato">Contato</a></li>
+        <li><button type="button" id="lang-toggle" class="lang-toggle" lang="en" aria-label="Switch to English">EN</button></li>
       </ul>
     </nav>
   </div>
@@ -118,7 +125,7 @@
     <p>Engenheiro de Automação & IA, especialista em n8n. Projeto sistemas inteligentes com n8n, Python e LLMs que cortam trabalho manual e entregam resultado mensurável.</p>
     <div class="btns">
       <a class="btn primary" href="#projetos">Ver projetos</a>
-      <a class="btn" href="https://github.com/victorH22BR" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://github.com/victorH22BR" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a class="btn" href="#contato">Falar comigo</a>
     </div>
   </div>
@@ -162,12 +169,36 @@
     <div class="grid">
 
       <article class="card">
+        <h3>DevPulse — API Monitoring &amp; Uptime Tracking</h3>
+        <p>Plataforma open source e leve de monitoramento de APIs: acompanha disponibilidade, latência, uptime e histórico de incidentes de serviços HTTP. Dashboard responsivo, monitores GET/POST com verificações assíncronas, exportação CSV filtrada, documentação OpenAPI e persistência em SQLite. Rotas, regras de negócio, persistência e serviços de monitoramento são camadas separadas, com validação de URL e DNS contra SSRF (bloqueio de IPs privados, loopback e link-local, IP público fixado na requisição, sem seguir redirects e com timeouts limitados).</p>
+        <p>MVP open source para uso local ou ambientes confiáveis com controle de acesso; não possui autenticação de usuários e não é um serviço público pronto para produção. O repositório inclui uma prévia estática no GitHub Pages com dados de exemplo, que não conecta a uma API de monitoramento real.</p>
+        <div class="tags"><span>Python</span><span>FastAPI</span><span>React</span><span>TypeScript</span><span>SQLite</span><span>SQLAlchemy</span><span>Alembic</span><span>Asyncio</span><span>Docker Compose</span><span>APIs REST</span></div>
+        <div class="card-links">
+          <a href="https://github.com/victorH22BR/DevPulse" target="_blank" rel="noopener noreferrer">Ver no GitHub →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>AI-Powered Family Progress Reporting</h3>
+        <p>Estudo de caso profissional (histórico), desenvolvido na Clínica Ello para ajudar famílias a acompanhar a evolução documentada no tratamento clínico dos filhos. O responsável iniciava o fluxo pelo WhatsApp, o sistema identificava o paciente e recuperava as notas de evolução e o Plano Terapêutico Individual (PTI). Um pipeline de IA/RAG comparava as evoluções recentes com o plano anterior e organizava avanços e dificuldades por especialidade. Um relatório HTML personalizado era convertido em imagem por uma API externa de renderização e enviado automaticamente pelo WhatsApp.</p>
+        <p>Projetado para apoiar relatórios individualizados para uma população clínica de cerca de 350 pacientes, melhorando a comunicação com as famílias, tornando a documentação clínica mais acessível e reduzindo o esforço manual. A IA organizava e resumia informações documentadas; não fazia diagnósticos nem tomava decisões clínicas.</p>
+        <div class="tags"><span>n8n</span><span>Python</span><span>RAG / LLMs</span><span>HTML</span><span>APIs REST</span><span>WhatsApp</span></div>
+      </article>
+
+      <article class="card">
+        <h3>Meta Social Engagement Automation</h3>
+        <p>Solução de automação orientada a eventos com a API oficial da Meta (Graph API) para operações de comentários e mensagens diretas em alto volume durante uma campanha eleitoral estadual. Webhooks recebem e processam os eventos, Private Replies respondem a interações elegíveis e os workflows suportaram posts com mais de 10 mil comentários. A solução ajudou a substituir uma plataforma SaaS de terceiros, eliminando cerca de R$ 1.400 em custos de licenciamento.</p>
+        <p>A infraestrutura de automação apoiou a operação digital de um perfil que cresceu de cerca de 550 mil para 1 milhão de seguidores em sete meses, período em que atuei na campanha. Contribuí com automação e infraestrutura operacional, sem atribuir o crescimento da audiência apenas à automação.</p>
+        <div class="tags"><span>n8n</span><span>Python</span><span>Graph API</span><span>Webhooks</span><span>APIs REST</span><span>Automação orientada a eventos</span></div>
+      </article>
+
+      <article class="card">
         <h3>FlowForge</h3>
         <p>Plataforma SaaS open source para criar assistentes de atendimento com IA sem escrever código, com RAG híbrido e widget incorporável.</p>
         <div class="tags"><span>SaaS</span><span>RAG</span><span>FastAPI</span><span>React</span></div>
         <div class="card-links">
-          <a href="https://victorh22br.github.io/flowforge-site/" target="_blank" rel="noopener">Ver demo →</a>
-          <a href="https://github.com/victorH22BR/flowforge" target="_blank" rel="noopener">GitHub →</a>
+          <a href="https://victorh22br.github.io/flowforge-site/" target="_blank" rel="noopener noreferrer">Ver demo →</a>
+          <a href="https://github.com/victorH22BR/flowforge" target="_blank" rel="noopener noreferrer">GitHub →</a>
         </div>
       </article>
 
@@ -175,13 +206,7 @@
         <h3>ProtonTrainer</h3>
         <p>App desktop open source para rodar trainers do Windows no Linux via Proton/Protontricks.</p>
         <div class="tags"><span>Rust</span><span>Tauri</span><span>React</span></div>
-        <a href="https://github.com/victorH22BR/ProtonTrainer" target="_blank" rel="noopener">Ver no GitHub →</a>
-      </article>
-
-      <article class="card">
-        <h3>Automação de Comentários e DMs</h3>
-        <p>Integração via API oficial da Meta (Webhooks e Private Replies) para responder comentários e enviar DMs em um perfil de 760 mil seguidores, substituindo uma ferramenta SaaS de ~R$ 1.400.</p>
-        <div class="tags"><span>n8n</span><span>Python</span><span>Graph API</span></div>
+        <a href="https://github.com/victorH22BR/ProtonTrainer" target="_blank" rel="noopener noreferrer">Ver no GitHub →</a>
       </article>
 
       <article class="card">
@@ -194,7 +219,7 @@
         <h3>RAG de Licitações (Lei 14.133)</h3>
         <p>Perguntas e respostas sobre a Lei de Licitações com citação do artigo. Chunking por artigo, busca vetorial no Qdrant, API em FastAPI, reindexação semanal via n8n e avaliação de recuperação com 30 perguntas.</p>
         <div class="tags"><span>RAG</span><span>Python</span><span>FastAPI</span><span>Qdrant</span><span>n8n</span><span>Docker</span></div>
-        <a href="https://github.com/victorH22BR/rag-licitacoes" target="_blank" rel="noopener">Ver no GitHub →</a>
+        <a href="https://github.com/victorH22BR/rag-licitacoes" target="_blank" rel="noopener noreferrer">Ver no GitHub →</a>
       </article>
 
     </div>
@@ -207,9 +232,18 @@
       <h3>Coordenador de Campanha & Engenheiro de Automação</h3>
       <div class="meta">Campanha de Deputada Estadual (Bahia) · Salvador, BA · mar 2026 – out 2026</div>
       <ul>
-        <li>Coordenei equipe de 6 pessoas e a operação digital da campanha, além do controle financeiro.</li>
-        <li>Automatizei comentários e DMs em perfil de 760 mil seguidores, com posts acima de 10 mil comentários.</li>
-        <li>Integrei a API oficial da Meta (Webhooks e Private Replies), eliminando custo de licença (~R$ 1.400) e limites de uso.</li>
+        <li>Coordenei uma equipe de 6 pessoas, contribuindo para a gestão operacional, a operação digital e o controle financeiro da campanha.</li>
+        <li>Atuei diretamente na infraestrutura digital e nas iniciativas de automação, em colaboração com uma equipe de programação de duas pessoas (eu incluído), desenvolvendo e mantendo workflows de automação.</li>
+        <li>Projetei e implementei workflows automatizados de comentários e mensagens diretas com a API oficial da Meta (Graph API).</li>
+        <li>Integrei Webhooks e Private Replies da Meta para processar interações das redes sociais de forma programática.</li>
+        <li>Ajudei a substituir uma plataforma SaaS de automação de terceiros, eliminando cerca de R$ 1.400 em custos de licenciamento de software.</li>
+        <li>Dei suporte a operações de engajamento em alto volume, incluindo posts com mais de 10 mil comentários.</li>
+      </ul>
+      <div class="meta" style="margin-top:14px;">Crescimento de audiência e operação digital</div>
+      <ul>
+        <li>Contribuí para a operação digital de um perfil que cresceu de cerca de 550 mil para 1 milhão de seguidores em sete meses, durante o meu período na campanha.</li>
+        <li>Apoiei esse período de crescimento com infraestrutura de automação, integrações com redes sociais e coordenação operacional.</li>
+        <li>Ajudei a manter workflows de engajamento em um ambiente de alto volume.</li>
       </ul>
     </div>
 
@@ -227,10 +261,12 @@
       <h3>Estágio em Engenharia de Software</h3>
       <div class="meta">Clínica Ello · Salvador, BA (presencial) · fev 2025 – mar 2026</div>
       <ul>
-        <li>Único responsável técnico pelos projetos de automação e IA da clínica, atuando com escopo e autonomia de nível sênior.</li>
-        <li>PTI Automation: 50 documentos em 2 h, contra 30 dias no processo anterior — redução de mais de 98%.</li>
-        <li>Reduzi a carga mensal de 160 h para 2 h (~158 h/mês economizadas nas equipes clínicas).</li>
-        <li>Implementei sistema RAG multidisciplinar, análise preditiva ABA e dashboards de KPIs em conformidade com a LGPD.</li>
+        <li>Projetei e desenvolvi, de forma independente, soluções de automação e IA para fluxos de trabalho clínicos e administrativos.</li>
+        <li>Construí uma automação de processamento de documentos para Planos Terapêuticos Individuais (PTI): 50 documentos em cerca de 2 h, contra uma estimativa de 30 dias no processo manual anterior.</li>
+        <li>Reduzi uma carga de trabalho mensal recorrente de cerca de 160 h para 2 h, uma economia de aproximadamente 158 h por mês.</li>
+        <li>Desenvolvi um sistema RAG multidisciplinar envolvendo Psicologia, Fonoaudiologia, Psicometria e Terapia Ocupacional.</li>
+        <li>Implementei recursos de análise preditiva relacionados à ABA e dashboards de gestão.</li>
+        <li>Apliquei uma arquitetura voltada à privacidade e considerações da LGPD no tratamento de informações clínicas sensíveis.</li>
       </ul>
     </div>
 
@@ -259,14 +295,140 @@
 
   <section id="contato" class="contact">
     <h2>Contato</h2>
-    <a href="https://github.com/victorH22BR" target="_blank" rel="noopener">GitHub</a>
-    <a href="https://www.linkedin.com/in/victorhugo-8aaa03287" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/victorH22BR" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://www.linkedin.com/in/victorhugo-8aaa03287" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     <a href="mailto:VictorHassuero19@proton.me">VictorHassuero19@proton.me</a>
   </section>
 
 </main>
 
 <footer>© 2026 Victor Hugo · Salvador, BA</footer>
+
+<script>
+(function () {
+  var EN = {
+  "Sobre": "About",
+  "Projetos": "Projects",
+  "Experiência": "Experience",
+  "Contato": "Contact",
+  "OLÁ, EU SOU": "HI, I'M",
+  "Engenheiro de Automação & IA, especialista em n8n. Projeto sistemas inteligentes com n8n, Python e LLMs que cortam trabalho manual e entregam resultado mensurável.": "Automation & AI Engineer specializing in n8n. I design intelligent systems with n8n, Python and LLMs that cut manual work and deliver measurable results.",
+  "Ver projetos": "View projects",
+  "Falar comigo": "Get in touch",
+  "Moro em Salvador, Bahia, e curso Engenharia de Software na Unijorge. Tenho quase 2 anos de experiência com automação, sistemas RAG, integrações de API e liderança de equipes técnicas, de clínicas a projetos GovTech.": "I live in Salvador, Bahia, Brazil, and study Software Engineering at Unijorge. I have almost 2 years of experience in automation, RAG systems, API integrations and technical team leadership, from clinics to GovTech projects.",
+  "menos tempo no processamento de documentos (30 dias → 2 h)": "less document processing time (30 days → 2 h)",
+  "economizadas por semana em operações clínicas": "saved per week in clinical operations",
+  "menos erros humanos em registros clínicos": "fewer human errors in clinical records",
+  "menos revisão manual em licitações públicas": "less manual review in public tenders",
+  "Habilidades": "Skills",
+  "Automação": "Automation",
+  "IA & Dados": "AI & Data",
+  "Bancos Vetoriais": "Vector Databases",
+  "Análise Preditiva": "Predictive Analytics",
+  "Desenvolvimento": "Development",
+  "API da Meta (Graph API)": "Meta API (Graph API)",
+  "APIs REST": "REST APIs",
+  "Arquitetura & Liderança": "Architecture & Leadership",
+  "Arquitetura de Software": "Software Architecture",
+  "Workflows Escaláveis": "Scalable Workflows",
+  "Liderança Técnica": "Technical Leadership",
+  "Metodologias Ágeis": "Agile Methodologies",
+  "Plataforma SaaS open source para criar assistentes de atendimento com IA sem escrever código, com RAG híbrido e widget incorporável.": "Open-source SaaS platform for building AI customer service assistants without writing code, with hybrid RAG and an embeddable widget.",
+  "Ver demo →": "View demo →",
+  "App desktop open source para rodar trainers do Windows no Linux via Proton/Protontricks.": "Open-source desktop app for running Windows trainers on Linux via Proton/Protontricks.",
+  "Ver no GitHub →": "View on GitHub →",
+  "Sistema RAG Clínico": "Clinical RAG System",
+  "RAG em produção integrando Psicologia, Fonoaudiologia, Psicometria e Terapia Ocupacional, com motor de análise preditiva ABA e conformidade com a LGPD.": "Production RAG integrating Psychology, Speech-Language Pathology, Psychometrics and Occupational Therapy, with an ABA predictive analytics engine and LGPD compliance.",
+  "RAG de Licitações (Lei 14.133)": "Public Procurement RAG (Law 14.133)",
+  "Perguntas e respostas sobre a Lei de Licitações com citação do artigo. Chunking por artigo, busca vetorial no Qdrant, API em FastAPI, reindexação semanal via n8n e avaliação de recuperação com 30 perguntas.": "Q&A on Brazil's Public Procurement Law with article citations. Per-article chunking, vector search in Qdrant, FastAPI API, weekly reindexing via n8n and retrieval evaluation with 30 questions.",
+  "Coordenador de Campanha & Engenheiro de Automação": "Campaign Coordinator & Automation Engineer",
+  "Campanha de Deputada Estadual (Bahia) · Salvador, BA · mar 2026 – out 2026": "State Representative Campaign (Bahia) · Salvador, Brazil · Mar 2026 – Oct 2026",
+  "Engenheiro de Automação & IA (Líder de Equipe)": "Automation & AI Engineer (Team Lead)",
+  "Aliança Comercial Nacional · Salvador, BA (home office) · out 2025 – mar 2026": "Aliança Comercial Nacional · Salvador, Brazil (remote) · Oct 2025 – Mar 2026",
+  "Arquitetei sistemas autônomos de IA para o setor público (GovTech).": "Architected autonomous AI systems for the public sector (GovTech).",
+  "Reduzi em mais de 80% o tempo de revisão manual em licitações.": "Cut manual review time for public tenders by more than 80%.",
+  "Liderei equipe de engenharia, análise jurídica e inteligência de negócios.": "Led a team spanning engineering, legal analysis and business intelligence.",
+  "Estágio em Engenharia de Software": "Software Engineering Intern",
+  "Clínica Ello · Salvador, BA (presencial) · fev 2025 – mar 2026": "Clínica Ello · Salvador, Brazil (on-site) · Feb 2025 – Mar 2026",
+  "Desenvolvedor Júnior": "Junior Developer",
+  "CoreVup · Sergipe, BR (home office) · mar 2025 – jan 2026": "CoreVup · Sergipe, Brazil (remote) · Mar 2025 – Jan 2026",
+  "Workflows de automação e integrações low-code em equipe ágil.": "Automation workflows and low-code integrations in an agile team.",
+  "Suporte à infraestrutura, ideação de produto e prototipagem rápida.": "Infrastructure support, product ideation and rapid prototyping.",
+  "MVP open source para uso local ou ambientes confiáveis com controle de acesso; não possui autenticação de usuários e não é um serviço público pronto para produção. O repositório inclui uma prévia estática no GitHub Pages com dados de exemplo, que não conecta a uma API de monitoramento real.": "Open-source MVP intended for local use or trusted, access-controlled environments; it has no user authentication and is not a production-ready public service. The repository includes a static GitHub Pages preview with sample data, which does not connect to a live monitoring API.",
+  "Plataforma open source e leve de monitoramento de APIs: acompanha disponibilidade, latência, uptime e histórico de incidentes de serviços HTTP. Dashboard responsivo, monitores GET/POST com verificações assíncronas, exportação CSV filtrada, documentação OpenAPI e persistência em SQLite. Rotas, regras de negócio, persistência e serviços de monitoramento são camadas separadas, com validação de URL e DNS contra SSRF (bloqueio de IPs privados, loopback e link-local, IP público fixado na requisição, sem seguir redirects e com timeouts limitados).": "Lightweight, open-source API monitoring platform that tracks endpoint availability, response latency, uptime metrics and incident history for HTTP services. Responsive dashboard, GET/POST monitors with asynchronous health checks, filtered CSV export, OpenAPI documentation and SQLite persistence. API routes, business logic, persistence and monitoring services are separate layers, with URL and DNS validation to reduce SSRF risk (blocks private, loopback and link-local addresses, pins the validated public IP for requests, does not follow redirects and applies bounded timeouts).",
+  "Estudo de caso profissional (histórico), desenvolvido na Clínica Ello para ajudar famílias a acompanhar a evolução documentada no tratamento clínico dos filhos. O responsável iniciava o fluxo pelo WhatsApp, o sistema identificava o paciente e recuperava as notas de evolução e o Plano Terapêutico Individual (PTI). Um pipeline de IA/RAG comparava as evoluções recentes com o plano anterior e organizava avanços e dificuldades por especialidade. Um relatório HTML personalizado era convertido em imagem por uma API externa de renderização e enviado automaticamente pelo WhatsApp.": "Historical professional case study, developed at Clínica Ello to help families better follow the progress documented in their children's clinical treatment. A parent or guardian started the flow on WhatsApp, and the system identified the patient and retrieved the progress notes and Individual Therapeutic Plan (PTI). An AI/RAG pipeline compared recent progress notes with the previous plan and organized documented progress and difficulties by specialty. A personalized HTML report was converted into an image by an external rendering API and delivered automatically through WhatsApp.",
+  "Projetado para apoiar relatórios individualizados para uma população clínica de cerca de 350 pacientes, melhorando a comunicação com as famílias, tornando a documentação clínica mais acessível e reduzindo o esforço manual. A IA organizava e resumia informações documentadas; não fazia diagnósticos nem tomava decisões clínicas.": "Designed to support individualized progress reports for a clinical population of about 350 patients, improving communication with families, making clinical documentation more accessible and reducing manual effort. The AI organized and summarized documented information; it made no diagnoses or clinical decisions.",
+  "Solução de automação orientada a eventos com a API oficial da Meta (Graph API) para operações de comentários e mensagens diretas em alto volume durante uma campanha eleitoral estadual. Webhooks recebem e processam os eventos, Private Replies respondem a interações elegíveis e os workflows suportaram posts com mais de 10 mil comentários. A solução ajudou a substituir uma plataforma SaaS de terceiros, eliminando cerca de R$ 1.400 em custos de licenciamento.": "Event-driven automation built on Meta's official Graph API to support high-volume comment and direct-message operations during a state-level electoral campaign. Webhooks receive and process events, Private Replies answer eligible interactions, and the workflows handled posts with more than 10,000 comments. It helped replace a third-party SaaS platform, eliminating approximately R$1,400 in licensing costs.",
+  "A infraestrutura de automação apoiou a operação digital de um perfil que cresceu de cerca de 550 mil para 1 milhão de seguidores em sete meses, período em que atuei na campanha. Contribuí com automação e infraestrutura operacional, sem atribuir o crescimento da audiência apenas à automação.": "The automation infrastructure supported the digital operations of a profile that grew from approximately 550K to 1M followers over seven months, during my time on the campaign. I contributed through automation and operational infrastructure; the audience growth is not attributed to automation alone.",
+  "Automação orientada a eventos": "Event-driven automation",
+  "Coordenei uma equipe de 6 pessoas, contribuindo para a gestão operacional, a operação digital e o controle financeiro da campanha.": "Coordinated a six-person campaign team, contributing to operational management, digital operations and financial control.",
+  "Atuei diretamente na infraestrutura digital e nas iniciativas de automação, em colaboração com uma equipe de programação de duas pessoas (eu incluído), desenvolvendo e mantendo workflows de automação.": "Worked directly on the campaign's digital infrastructure and automation initiatives, collaborating with a two-person programming team (myself included) to develop and maintain automation workflows.",
+  "Projetei e implementei workflows automatizados de comentários e mensagens diretas com a API oficial da Meta (Graph API).": "Designed and implemented automated comment and direct-message workflows using the official Meta Graph API.",
+  "Integrei Webhooks e Private Replies da Meta para processar interações das redes sociais de forma programática.": "Integrated Meta Webhooks and Private Replies to process social media interactions programmatically.",
+  "Ajudei a substituir uma plataforma SaaS de automação de terceiros, eliminando cerca de R$ 1.400 em custos de licenciamento de software.": "Helped replace a third-party automation SaaS platform, eliminating approximately R$1,400 in software licensing costs.",
+  "Dei suporte a operações de engajamento em alto volume, incluindo posts com mais de 10 mil comentários.": "Supported high-volume engagement operations, including posts receiving more than 10,000 comments.",
+  "Crescimento de audiência e operação digital": "Audience Growth and Digital Operations",
+  "Contribuí para a operação digital de um perfil que cresceu de cerca de 550 mil para 1 milhão de seguidores em sete meses, durante o meu período na campanha.": "Contributed to the digital operations of a social media profile that grew from approximately 550K to 1M followers in seven months, during my time on the campaign.",
+  "Apoiei esse período de crescimento com infraestrutura de automação, integrações com redes sociais e coordenação operacional.": "Supported this growth period through automation infrastructure, social media integrations and operational coordination.",
+  "Ajudei a manter workflows de engajamento em um ambiente de alto volume.": "Helped maintain engagement workflows in a high-volume environment.",
+  "Projetei e desenvolvi, de forma independente, soluções de automação e IA para fluxos de trabalho clínicos e administrativos.": "Independently designed and developed automation and AI solutions for clinical and administrative workflows.",
+  "Construí uma automação de processamento de documentos para Planos Terapêuticos Individuais (PTI): 50 documentos em cerca de 2 h, contra uma estimativa de 30 dias no processo manual anterior.": "Built document-processing automation for Individual Therapeutic Plans (PTIs), processing 50 documents in approximately 2 hours compared with an estimated 30 days in the previous manual process.",
+  "Reduzi uma carga de trabalho mensal recorrente de cerca de 160 h para 2 h, uma economia de aproximadamente 158 h por mês.": "Reduced a recurring monthly workload from approximately 160 hours to 2 hours, saving around 158 hours per month.",
+  "Desenvolvi um sistema RAG multidisciplinar envolvendo Psicologia, Fonoaudiologia, Psicometria e Terapia Ocupacional.": "Developed a multidisciplinary RAG system involving Psychology, Speech-Language Pathology, Psychometrics and Occupational Therapy.",
+  "Implementei recursos de análise preditiva relacionados à ABA e dashboards de gestão.": "Implemented ABA-related predictive analysis capabilities and management dashboards.",
+  "Apliquei uma arquitetura voltada à privacidade e considerações da LGPD no tratamento de informações clínicas sensíveis.": "Applied privacy-conscious architecture and LGPD (Brazil's data protection law) considerations when handling sensitive clinical information.",
+  "Formação": "Education",
+  "Bacharelado em Engenharia de Software": "B.S. in Software Engineering",
+  "Unijorge · out 2023 – dez 2028 (previsão)": "Unijorge · Oct 2023 – Dec 2028 (expected)",
+  "Design Gráfico": "Graphic Design",
+  "Infinity School – Visual Art Creative Center · ago 2023 – abr 2024": "Infinity School – Visual Art Creative Center · Aug 2023 – Apr 2024",
+  "Idiomas: Português (nativo), Inglês (B1), Italiano (B2).": "Languages: Portuguese (native), English (B1), Italian (B2)."
+};
+
+  var button = document.getElementById('lang-toggle');
+  var meta = document.querySelector('meta[name="description"]');
+  var original = { title: document.title, description: meta.content };
+  var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  var items = [], node;
+
+  while ((node = walker.nextNode())) {
+    var key = node.nodeValue.replace(/\s+/g, ' ').trim();
+    if (Object.prototype.hasOwnProperty.call(EN, key)) {
+      items.push({ node: node, pt: node.nodeValue, en: EN[key] });
+    }
+  }
+
+  function setLanguage(lang) {
+    var isEn = lang === 'en';
+    items.forEach(function (item) { item.node.nodeValue = isEn ? item.en : item.pt; });
+    document.documentElement.lang = isEn ? 'en' : 'pt-BR';
+    document.title = isEn ? 'Victor Hugo | Automation & AI Engineer' : original.title;
+    meta.content = isEn
+      ? 'Portfolio of Victor Hugo, automation and AI engineer specializing in n8n, Python and LLMs.'
+      : original.description;
+    button.textContent = isEn ? 'PT' : 'EN';
+    button.lang = isEn ? 'pt-BR' : 'en';
+    button.setAttribute('aria-label', isEn ? 'Mudar para português' : 'Switch to English');
+  }
+
+  var current = new URLSearchParams(location.search).get('lang');
+  if (!current) {
+    try { current = localStorage.getItem('lang'); } catch (e) {}
+  }
+  setLanguage(current === 'en' ? 'en' : 'pt');
+
+  button.addEventListener('click', function () {
+    var next = document.documentElement.lang === 'en' ? 'pt' : 'en';
+    setLanguage(next);
+    try { localStorage.setItem('lang', next); } catch (e) {}
+    var url = new URL(location.href);
+    if (url.searchParams.has('lang')) {
+      url.searchParams.set('lang', next);
+      try { history.replaceState(null, '', url); } catch (e) {}
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
